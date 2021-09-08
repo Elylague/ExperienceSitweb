@@ -1,0 +1,20 @@
+   [
+    {
+    "physique9":["Notion de Force","Notion de travail","Pression","les leviers","Electricité"]
+    },
+    {
+    "physiqueNSI":["Etat de la matière","Force et Mouvement","Fluide et Pression dans un liquide","Electricité","Optique"]
+    },
+    {
+    "physiqueNSII":["Exploration de l'Espace","Force et Mouvement","Chaleur, Temperature et Dilatation","Compressibilité et Dilatation des gaz","Optique"]
+    },
+    {
+    "physiqueNSIII":["Electricité","Optique"]
+    },
+    {
+    "physiqueNSIV":["condensateur","Magnetisme","Alternatif"]
+    },
+    {
+      "Niveaux":["9ème","NSI","NSII","NSIII","NSIV"]
+    }
+  ]

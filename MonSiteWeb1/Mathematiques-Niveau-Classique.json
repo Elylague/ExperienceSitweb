@@ -1,0 +1,31 @@
+
+  [
+    {
+      "mathematiqueTerminale":["Suite numerique","Analyse linéaire","Algèbre","Nombre complexe","Probabilité"]
+    },
+    {
+      "MathematiqueRheto":["Algèbre","Geométrie analytique","Trigonométrie","Suite numerique" ,"Analyse combinatoire","Analyse linéaire"]
+    },
+    {
+      "MathematiqueNS1":["Algèbre","Geométrie plane","Geométrie Analytique","Geométrie de l'espace","Trigonométrie"]
+    },
+    {
+        "MathematiqueNS2": ["Trigonométrie", "Geométrie Analytique", "Algèbre"]
+     },
+    {
+      "Mathematique":["Geométrie plane","Geométrie de l'espace","Algèbre"]
+    },
+    {
+      "Physique":["Electricité","Alternatif","Condensateur"]
+    },
+ 
+   {
+     "nom":["Economie","Geologie","Science sociale","SVT","Espagnol","Chimie","Anglais"]
+     
+   },
+   {
+     "niveau":["7ème","8ème","9ème","NSI","NSII","NSIII","NSIV"]
+   }
+     
+]
+

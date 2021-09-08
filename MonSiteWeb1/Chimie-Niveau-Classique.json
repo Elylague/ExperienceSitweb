@@ -1,0 +1,25 @@
+[
+  {
+    "ChimieNSI":["Classifictions periodiques des éléments","Quantité de matières  ","Réactions chimiques","Réctions des materiaux avec dioxygène","Réactions acides","Réactions basiques","Materiaux conducteurs"]
+    
+  },
+  {
+    "ChimieNSII":["Introduction en chimie Minérale","Structure de l'atome","Classifictions periodiques xes éléments","Valences","Ions","Nomenclature","Reactions chimiques","Initations aux problèmes de chimie","Equilibre chimique:lois des gaz parfaits","Liaisons chimiques","Nombre d'oxydations","Etude du gaz carbonique","Chimie des solutions","Etude de l'acide chloridrique","Fonctions acides","Fonctions basiques","Sels"]
+    
+  },
+  {
+    "ChimieNSIII":["Ntion de valence","Fonction Acide","Fonction basique","La fonction sel","Règle de Berthollet","Oxydation et Reduction","Nombre d'oxydation ou degré d'oxydation","Oxydants et reducteurs","Généralités sur les méteaux","Propriétés mécaniques des méteaux","Propriétés chimiques genérales des méteaux","méthodes usuelles de la métallurgie","l'aluminium","Etat naturel et métallurgie de l'aluminium","L'alumine","Le cuivre","Etat naturel et metallurgie du cuivre","Le sulfate de cuivre","Etude de quelques électrolyses","EXERCICES PROPOSÉS"]
+  },
+  {
+    "ChimieNSIV":["Introduction en chimie organique","Liaisons chimiques","propriétés de l'atome de carbone","hydrocarbure","fonctiond chimiques","Isomerie","Les réactions en chimie organique","Le méthane","Éthène ou Éthylène","Acetylène","Benzène","Fonction Alcool","Ethanol","Ethanal et Acétone","Ester ou Ether-Sel","glucose","Analyse Élémentaire qualitative"]
+  },
+  {
+    "chapitres":["CHAPITRE I","CHAPITRE II","CHAPITRE III","CHAPITRE IV","CHAPITRE V","CHAPITRE VI","CHAPITRE VII","CHAPITRE VIII","CHAPITRE XI","CHAPITRE X","CHAPITRE XI","CHAPITRE XII","CHAPITRE XIII","CHAPITRE XIV","CHAPITRE XV","CHAPITRE XVI","CHAPITRE XVII"]
+    
+  },
+  {
+    "NiveauChimie": ["Chimie NSI", "Chimie NSII", "Chimie NSIII", "Chimie NSIV"]
+  
+  }
+  
+]
