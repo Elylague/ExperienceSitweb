@@ -11,16 +11,14 @@ class EnteteDePage extends HTMLElement {
     const style=document.createElement('style');
     const linkElm=document.createElement('link');
     linkElm.setAttribute('rel','stylesheet');
-    linkElm.setAttribute('href', 'entete-composant/entete.css');
+    linkElm.setAttribute('href', 'components/entete-composant/entete.css');
     this.shadowRoot.appendChild(linkElm);
 
   
     
     template.innerHTML= `  
     
-      <header>
-        <h1> je comprend tous mes cours</h1>
-      </header> 
+      
       <nav>
       
         <div>
@@ -30,7 +28,13 @@ class EnteteDePage extends HTMLElement {
            <a class="ancher" href="PageStaff.html">Staff</a>
         </div> 
 
-        </nav>`
+        </nav>
+        <header>
+                <h1> je comprend tous mes cours</h1>
+        </header>
+        
+        
+        `
     
         const templateContent=template.content.cloneNode(true);
         this.shadowRoot.appendChild(templateContent);
@@ -41,7 +45,6 @@ class EnteteDePage extends HTMLElement {
 
 }
 
-customElements.define('entete-de-page', EnteteDePage);
+export {EnteteDePage}
+//customElements.define('entete-de-page', EnteteDePage);
 
-let entete=document.querySelector('entete-de-page');
-console.log(entete.shadowRoot);

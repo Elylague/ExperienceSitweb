@@ -1,0 +1,16 @@
+:host{
+  display: block;
+ /* background-color: yellow;*/
+}
+
+h1{
+  background-color: skyblue;
+}
+
+/*diviser le corps de page en deux sections*/
+:host(#corps-de-page){
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+
