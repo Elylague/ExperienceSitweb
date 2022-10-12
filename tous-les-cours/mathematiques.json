@@ -1,0 +1,45 @@
+ [
+    {
+      "mathematiqueTerminale":["Suite numerique","Analyse linéaire","Algèbre","Géométrie","Nombre complexe","Probabilité"],
+      "suiteNumerique":["Nature d'une suite","representation graphique","Suite Arithmétique","Suite géometrique","Limite d'une suite","EXERCICES"],
+      "analyseLineaire":["Corps des nombres réels","Partie entière","Domaine de définition","Continuité et la derivabilité","Bijection reciproque d'une fonction","Fonction logarithme","Fonction Exponentielle","Primitive d'une fontion","Intégration","Représentation graphique d'une fonction","EXERCICES"],
+      "algebre":["Sous-espace vectoriel","Application linéaire","Projection et symétrie vectorielle","Relation entre symétrie et projection vectorielle","EXERCICES"],
+      "geometrie":["Espace affine","Barycentre","Points et système de points pondérés","Fonction vectorielle de Leibniz","Fonction scalaire de Leibniz","Application affine","Espaces vectoriels euclidiens"],
+      "NombreComplexe":["Corps des nombres complexes","Formes des nombres complexes","Opération dans C","Plan complexe","Module d'un nombre complexe","Argument d'un nombre complexe","Forme trigonométrique","forme Exponentielle","Forme polaire","Linéarisation d'un polynôme","Racines carrées d'un nombre complexe","Racine Nème","Equation dans C","Similitude"],
+      "probabilite":["Rappels denombrement","Calculs de probabilité","Probabilité conditionnelle","Loi de probavilité","Variable aléatoires","Fonction de repartition","Espérance mathématique","variance","Ecart-type","Epreuve de Bernoulli"]
+    },
+    {
+      "mathematiqueRheto":["Algèbre","Geométrie analytique","Trigonométrie","Suite numerique" ,"Analyse combinatoire","Analyse linéaire"],
+      "suiteNumeriqueRheto":["Nature d'une suite","representation graphique","Suite Arithmétique","Suite géometrique","Limite d'une suite","EXERCICES"],
+      "analyseRheto":["Fonction","Domaine de définition","Opération sur les fonctions","Application","Limite d'une fonction","Continuité d'une fontion","Dérivé d'une fonction","Dérivabilité","Parité","Tracé d'une fonction"],
+      "geometrieRheto":["vecteurs du plan","coordonnées d'un vecteur","produit scalaire","Norme","representation paramétrique d'une droite","représentation paramétrique d'un plan ","Equation cartésienne d'une droite","positions relatives de droites","positions relatives de plans","positions relatives d'une droite et d'un plan","distance de deux points","distance d'un point et une droite","cercles"],
+      "algebreRheto":["Ensemble des nombres(Rappels)","Les espaces vectoriels","Loi de compositions internes","Loi de compositions externes","Combinaisons linéaires des vecteurs","Applications","familles génératrice","Indépendance linéaire des vecteurs","Famille libre","Dépendance linéaire des vecteurs","Famille liée","Base d'un espace vectoriel","Dimension d'un espace vectoriel","Base canonique du plan vectoriel","Changement de base dans le plan"],
+      "trigonometrieRheto":["Définition","Mesure des arcs de cercle","Passage de système de mesure à une autre","Cercle trigonométrique","Fonctions circulaires","Relations entre les fonctions circulaires d'une même angle","Valeurs remarquables","des fonctions circulaires des arcs de 0 à 2PI","Formules d'addition","Formules de multiplication","Arcs associés","Arcs opposés","Arcs supplémentaires","Arcs complémmentaires","Arcs dont la difference est PI ou arcs diamétraux","Arcs dont la différence est PI/2","Applications aux triangles rectangles","Équations trigonométriques","resolution de l'équation : cosx=a","Résolution de l'équation sinx=b","Résolution de l'équation tgx=c","Résolution de l'équation cosx=cosy","Résolution de l'équation Sinx=Siny"],
+      "analyseCombinatoire":["Théorie des ensembles","Principe fondamental de l'analyse combinatoire","Factorielle d'un nombre entier","Calcul sur Arrangement","Calcul sur combinaison","Permutation","Tirage","Tirage-Jeux de carte"]
+    },
+    {
+      "mathematiqueNS1":["Algèbre","Geométrie","Trigonométrie"],
+      "algebreNS1":["Calcul numérique","Ensemblede nombre","Calcul algebrique","Fractions rationnelles","Racines carrées","Equation","Inéquations","Equation du 1er degré à deux inconnues","système d'équation du 1er degré à deux inconnues","Fonctions-Applications","Equations du second degré"],
+      "geometrieNS1":["Droites et distances","Théoreme de Thalès","Reciproque du théorème de Thalès","Géométrie analytique","Equation de droite"],
+      "trigonometrieNS1":["triangles rectangles (Rappels)","coté opposé à un angle donné","coté adjacent à un angle donné","Cosinus d'un angle aigu","Sinus d'un aigu","Tangente","Calcul de la mesure d'un angle","Calcul de longueurs(coté-hauteur)","Pente d'une route","Valeurs particulières de cosinus, sinus et tangente","Relations trigonométriques","Cas d'un angle obtus"]
+    },
+    {
+        "mathematiqueNS2": ["Trigonométrie", "Geométrie", "Algèbre","Analyse linéaire"],
+        "trigonometrieNS2":["Définition","Mesure des arcs de cercle","Passage de système de mesure à une autre","Cercle trigonométrique","Fonctions circulaires","Relations entre les fonctions circulaires d'une même angle","Valeurs remarquables","des fonctions circulaires des arcs de 0 à 2PI","Formules d'addition","Formules de multiplication","Arcs associés","Arcs opposés","Arcs supplémentaires","Arcs complémmentaires","Arcs dont la difference est PI ou arcs diamétraux","Arcs dont la différence est PI/2","Applications aux triangles rectangles","Équations trigonométriques","resolution de l'équation : cosx=a","Résolution de l'équation sinx=b","Résolution de l'équation tgx=c"],
+        "algebreNS2":["Système linéaire du 1er degré à deux inconnues","Système linéaire du 1er degré à 3 inconnues","Structure algébrique","Espace vectoriel","Combinaison linéaire","Sous-Espace vectoriel","Aplication linéaires"],
+        "geometrieNS2":["repère cartesien d'un espace affine","Equations des droites","Applications dans le plan","Produit scalaire et Norme","Cercle"],
+        "analyseNS2":["Logiques des propositions","Calcul dans |R","Equation dans R","Ordre dans R","Fonctions numéques","Etudes des fonctions numéques"]
+     },
+    {
+      "mathematique789":["Geométrie plane","Geométrie de l'espace","Algèbre"],
+      "geometriePlane789":["Droite et plan","Longueur et cercle","Secteurs angulaires","Triangles et quadrilatères","Calcul d'aire","Les transformations","Les solides","volumes(usuels)"]
+    },
+   {
+     "nom":["Economie","Geologie","Science sociale","SVT","Espagnol","Chimie","Anglais"]
+     
+   },
+   {
+     "niveau":["7ème","8ème","9ème","NSI","NSII","NSIII","NSIV"]
+   }
+     
+]

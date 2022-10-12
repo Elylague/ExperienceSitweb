@@ -22,10 +22,10 @@ class EnteteDePage extends HTMLElement {
       <nav>
       
         <div>
-           <a class="activer-onglet ancher" href="Index.html">Accueil</a></li>
-           <a class="ancher" href="PageCours.html">Cours</a>
-           <a class="ancher" href="PageMedia.html">Media</a>
-           <a class="ancher" href="PageStaff.html">Staff</a>
+           <a class="activer-onglet ancher" href="pageAccueil.html">Accueil</a></li>
+           <a class="ancher" href="pageCours.html">Cours</a>
+           <a class="ancher" href="pageMedia.html">Media</a>
+           <a class="ancher" href="pageStaff.html">Staff</a>
         </div> 
 
         </nav>

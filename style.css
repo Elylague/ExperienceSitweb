@@ -1,13 +1,20 @@
 body{
   margin: 0;
+
+}
+html{
+  font-size: 12px;
 }
 
 
-body div#app{
+body main#app{
+  
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  min-height: 80vh;
   margin: 0px;
+  /*min-width: 100vw;*/
+
 }
 
 /*pied-de-page{
@@ -30,5 +37,24 @@ body div#app{
 }
 
 :root{
-  --couleur-rouge: darkred;
+  --couleur-de-police-rouge: darkred;
+}
+
+/*:not(:defined){
+  display: none;
+}
+
+:not(:defined){
+  display: block;
+}*/
+
+/*:not(defined){
+  display: none;
+}
+
+:defined{
+  display: block;
+}*/
+:defined{
+  font-size: 0.8rem;
 }

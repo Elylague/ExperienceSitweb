@@ -1,0 +1,23 @@
+   [
+     {
+       "physique9": ["Notion de Force", "Notion de travail", "Pression", "les leviers", "Electricité"]
+    },
+     {
+       "physiqueNSI": ["Etat de la matière", "Force et Mouvement", "Fluide et Pression dans un liquide", "Electricité", "Optique"]
+    },
+     {
+       "physiqueNSII": ["Exploration de l'Espace", "Force et Mouvement", "Chaleur, Temperature et Dilatation", "Compressibilité et Dilatation des gaz", "Optique"]
+    },
+     {
+       "physiqueNSIII": ["Electricité", "Optique"]
+    },
+     {
+       "physiqueNSIV": ["Condensateur", "Magnetisme", "Alternatif"],
+       "condensateur": ["Définition condensateur", "Types de condensateur", "capacité d'un condensateur", "condensateur en parallèles", "condensateur en serie", " Serie parallele", "La bouteille de Leyde"],
+       "magnetisme": ["Champ magnetisme", "Type de bobine", "Induction magnetisme", "Bobine plane", "Bobine torique", "Flux magnetisme"],
+       "alternatif": ["Courant alternatif", "Impedance", "Inductance", "Capacitance", "Reluctance", "Circuit R-C", "Circuit L-C", "Circuit R-L-C", "Diagramme de Fresnel", "Frequence", "Periode", "Tension éficace", "Intensité éfficace"]
+    },
+     {
+       "Niveaux": ["9ème", "NSI", "NSII", "NSIII", "NSIV"]
+    }
+  ]

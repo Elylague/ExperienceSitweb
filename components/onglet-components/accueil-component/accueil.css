@@ -1,0 +1,21 @@
+:not(:defined){
+  display: none;
+}
+:defined{
+  display: block;
+}
+
+
+:host{
+  padding: 10px;
+}
+
+:host(.page-accueil){
+  background-color: palevioletred;
+  display: block;
+  padding: 10px;
+}
+
+.parag{
+  color: var(--couleur-de-police-rouge);
+}

@@ -17,7 +17,10 @@ class CorpsDePage extends HTMLElement{
           linkEl.setAttribute('href', 'components/corp-de-page/corp-de-page.css')
           this.shadowRoot.appendChild(linkEl);
           
-          template.innerHTML=`<slot></slot>
+          template.innerHTML=`
+          
+          <slot name="page-accueil">le contenu de la page accueil n'est pas disponible</slot>
+          <slot name="lateral"> ce contenu n'est pas encore disponible</slot>
           `
           const templateContent=template.content.cloneNode(true);
          
@@ -28,8 +31,8 @@ class CorpsDePage extends HTMLElement{
   }
   corpDePageEnSection(){
     
-    console.log(this.shadowRoot.innerHTML);
-    console.log('dans la fonction corpDePageEnSection');
+    //console.log(this.shadowRoot.innerHTML);
+    //console.log('dans la fonction corpDePageEnSection');
   }
 }
 
