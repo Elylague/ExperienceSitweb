@@ -1,0 +1,48 @@
+:host{
+  display: block;
+  padding: 0;
+
+}
+/*========ENTÊTE DE LA PAGE=========*/
+header{
+  margin: 0;
+  text-align: center;
+  background-color: grey;
+  height: 100px;
+}
+
+header h1{
+  margin: 0;
+}
+
+/* ======C'EST LE MENU PRINCIPAL====== */
+nav{
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  background-color:rgba(119, 136, 153, 0.50);
+}
+
+div{
+  margin: 0;
+  /*list-style-type: none;*/
+}
+  div a{
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.activer-onglet{
+  background-color: white;
+  border-radius: 5px;
+  color: mediumvioletred;
+}
+
+
+/*div li.li-Nav{
+  margin-right: 15px;
+  display: inline-block;
+}*/

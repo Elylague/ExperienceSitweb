@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+
+}
+html{
+  font-size: 12px;
+}
+
+
+body div#app{
+  
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 80vh;
+  margin: 0px;
+  /*min-width: 100vw;*/
+
+}
+
+/*pied-de-page{
+  height: 100px;
+  background-color: grey;
+}
+*/
+
+.section-page-accueil{
+  
+  
+  /*background-color:palevioletred;*/
+  padding: 10px;
+ 
+}
+
+
+.aside{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color:rgba(119, 136, 153, 0.50);
+}
+
+:root{
+  --couleur-de-police-rouge: darkred;
+}
+
+
+:defined{
+  font-size: 0.8rem;
+}
+
+
+
+
+main#corps-de-page {
+  /*font-size: 1em;*/
+  display: grid;
+  grid-template-columns: 2fr 0.8fr;
+  /*font-size: 0.6rem;*/
+ /* background-color: lightblue;*/
+}
