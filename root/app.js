@@ -1,50 +1,76 @@
+
+import {routes} from './route.js'
 import {EnteteDePage } from './components/entete-composant/entete.js'
 import {CorpsDePage } from './components/corp-de-page/corp-de-page.js'
 import {PiedDePage} from './components/footer-component/pied-de-page.js'
 import {PageAccueil} from './components/onglet-components/accueil-component/accueil.js'
 import {AsideLateral} from './components/lateral-component/lateral.js'
-import {PageCours} from './components/onglet-components/cours-component/cours.js';
+import {ListeCours} from './components/onglet-components/cours-component/cours.js';
 import {PageMedia} from './components/onglet-components/media-component/media.js';
 import {PageStaff} from './components/onglet-components/staff-component/staff.js'
+import {FormCours} from './components/formulaire-cours/form-cours.js';
 customElements.define('entete-de-page', EnteteDePage);
-//customElements.define('corp-de-page', CorpsDePage);
+customElements.define('corp-de-page', CorpsDePage);
 customElements.define('pied-de-page', PiedDePage);
 customElements.define('page-accueil', PageAccueil);
 customElements.define('aside-lateral', AsideLateral)
-customElements.define('page-cours', PageCours);
+//customElements.define('page-cours', PageCours);
 customElements.define('page-media', PageMedia);
 customElements.define('page-staff', PageStaff);
+customElements.define('form-cours', FormCours);
+customElements.define('liste-cours', ListeCours)
 
+//const corpsDePage=document.querySelector('#corps-de-page');
 
+//import {routes} from './route.js'
 
-
-
-
-
-
-import {routes} from './route.js'
-
-const dataHtml=routes[0].fetchData();
-dataHtml.then(function(pageHtml){
-  //const body=pageHtml.querySelector('body').children;
-  
-    console.log(pageHtml);
-    //lesEnfant(body)
-})
-//console.log(dataHtml);
-function lesEnfant(enfant){
- // console.log(enfant);
-  for(let child of enfant){
-    console.log(child);
-  }
-}
 
 const divApp=document.querySelector('#app');
-//console.log(divApp);
-  function loadPage(){
+let sectionPageCours=document.querySelector('main .section-page-accueil')
+
+ //console.log(ancrePageCours);
+
+
+
+    const locationPathName = () => {
+      // console.log(history.state)
+      //console.log(history.state.nomPage);
+      
+      const exUrl = window.location.href
+      //console.log(Url);
+      const exNewUrl = new URL(exUrl)
+      const params = exNewUrl.searchParams.has('cours');
+      if (params) {
+        let lesCours = '';
+        return lesCours = exNewUrl.searchParams.get('cours');
+      
+      } else {
+        let lesPages = '';
+        return lesPages = exNewUrl.searchParams.get('page');
+      
+      }
+      
+
     
+    }
     
-    
+    function compareStateAndParams(){
+      
+      const exUrl = window.location.href
+      //console.log(Url);
+      const exNewUrl = new URL(exUrl)
+      const params= exNewUrl.searchParams.has('cours');
+      if (params){
+      let lesCours='';
+        return lesCours=exNewUrl.searchParams.get('cours');
+        
+      }else{
+        let lesPages='';
+        return lesPages=exNewUrl.searchParams.get('page');
+        
+      }
+      
+    }
     
   
   // RECUPPERER  LES ONGLETS ET LES AJOUTER UN CLICK
@@ -52,10 +78,10 @@ const divApp=document.querySelector('#app');
 const recupererAncher=()=> {
   let ancreOnglet=document.querySelector('#app entete-de-page');
   ancreOnglet=ancreOnglet.shadowRoot.querySelectorAll('a');
-  //console.log(ancreOnglet);
+  
   return ancreOnglet;
 }
-//recupererAncher();
+
 
 //dexième action de départ======(1)
 const ajouterClickSurAncreOnglet=()=> {
@@ -69,12 +95,16 @@ const ajouterClickSurAncreOnglet=()=> {
 }
 ajouterClickSurAncreOnglet()
 
+
+
 //la troisième action de départ====
-function activerOngletCliquer(texteAncre){
+function activerOngletCliquer(){
   let ancreOngletRetouner=recupererAncher()
+  let valueParams=compareStateAndParams();
+  //console.log(params, 'dans activerOngletCliquer');
   ancreOngletRetouner.forEach(onglet=> {
     onglet.className=''
-    switch (texteAncre) {
+    switch (valueParams) {
       case "Accueil":
       ancreOngletRetouner[0].className='activer-onglet';
       break;
@@ -87,16 +117,36 @@ function activerOngletCliquer(texteAncre){
       case "Staff":
       ancreOngletRetouner[3].className='activer-onglet';
       break;
+      case "mathematiques":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "Physiques":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "Chimie":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "science sociale":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "anglais":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "espagnol":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "créole":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
+      case "français":
+      ancreOngletRetouner[1].className = 'activer-onglet';
+      break;
       default:
       ancreOngletRetouner[0].className='activer-onglet';
     }
 
     
   })
-  
- // currentTag.className='activer-onglet'
-//console.log(texteAncre);
-  
   
 }
 
@@ -105,66 +155,49 @@ function activerOngletCliquer(texteAncre){
 function ancreContentAndNewUrl(e) {
   e.preventDefault();
   
-  //console.log(ancreOngletRetouner);
-  //console.log(e.target);
+
   let targetCliquer=e.currentTarget
   let ancreHref=e.target.href
   let texte=e.target.textContent
  
 
-// activerOngletCliquer(targetCliquer)
- activerOngletCliquer(texte)
-  pushStateNewUrl(ancreHref,texte)
+
+ activerOngletCliquer()
+  pushStateNewUrl(ancreHref)
   
- // return ancherTextContent;
-  //return htmlAncherElement;
-  return targetCliquer
+  
+
+ // return targetCliquer
 }
 
 // quatrième action de départ=====(4)
-function pushStateNewUrl(UrlAncher,nomPage){
+function pushStateNewUrl(UrlAncher){
+  let nomPage=locationPathName();
   window.history.pushState({nomPage}, nomPage, UrlAncher );
-  let stateAndUrl={UrlAncher, nomPage, }
-// console.log(nomPage)
- // console.log(history.state)
-  //console.log(locationPathName())
-  //activerOngletCliquer(nomPage);
-  templateAndUrl(stateAndUrl)
+ 
+ templateAndUrl()
 }
 
 //==== Fin popState(3)
-const locationPathName = () => {
- // console.log(history.state)
-  //console.log(history.state.nomPage);
-  if (history.state!==null) {
-    return history.state.nomPage
-  } else {
-    return history.state
-  }
-  //return history.state.nomPage;
 
-
-}
 //sixième action de départ====(6-2)
 const templatePageName=(object)=> {
  let nomPage=locationPathName()
-//console.log(nomPage);
+  //console.log(nomPage);
   if (object.nomPage===nomPage) {
    object.render()
-    //console.log(object, 'les routes');
-    
+
   }else if(nomPage===null){
-    routes[0].render()
-    //console.log(routes[index])
+   routes[0].render();
+
   }
   
 }
 // cinquième action de dépaet=== (5-1)
-function  templateAndUrl(etatEtUrl) {
+function  templateAndUrl() {
   
   routes.find(templatePageName)
 callActiverOngletCliquer()
-  
 }
 
 
@@ -179,19 +212,21 @@ function callActiverOngletCliquer(){
 }
 
 
+// liste des cours indépendants dans la page des cours
+
+
 window.addEventListener('popstate', templateAndUrl)
 
 
-//FIN FONCTION LOADPAGE()
+function loadPage(){
+  templateAndUrl()
 }
-
-
 
 window.addEventListener('load', loadPage)
 
 
 
-
+//console.log(divApp);
 
 
 

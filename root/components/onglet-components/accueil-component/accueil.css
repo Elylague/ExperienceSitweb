@@ -6,9 +6,10 @@
 }
 
 
-:host{
+/*:host{
   padding: 10px;
 }
+*/
 
 :host(.page-accueil){
   background-color: palevioletred;

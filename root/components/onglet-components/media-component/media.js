@@ -5,7 +5,7 @@ class PageMedia extends HTMLElement{
   }
   
   connectedCallback(){
-    this.setAttribute('class', 'page-cours');
+    this.setAttribute('class', 'page-media');
     // créer le lien de css
     const linkMedia = document.createElement('link');
     linkMedia.setAttribute('rel', 'stylesheet');

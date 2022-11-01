@@ -6,6 +6,13 @@ class EnteteDePage extends HTMLElement {
   }
   
   connectedCallback(){
+    this.fonctDeEnteteDePage()
+    
+    
+  }
+  
+  fonctDeEnteteDePage(){
+    
     
     const template = document.createElement('template');
     const style=document.createElement('style');
@@ -22,10 +29,10 @@ class EnteteDePage extends HTMLElement {
       <nav>
       
         <div>
-           <a class="activer-onglet ancher"  href="http://localhost:7700/root/index.html/Accueil">Accueil</a></li>
-           <a class="ancher" href="http://localhost:7700/root/index.html/Cours">Cours</a>
-           <a class="ancher" href="http://localhost:7700/root/index.html/Media">Media</a>
-           <a class="ancher" href="http://localhost:7700/root/index.html/Staff">Staff</a>
+           <a class="activer-onglet ancher"  href="http://localhost:7700/root/index.html?page=Accueil">Accueil</a></li>
+           <a class="ancher" href="http://localhost:7700/root/index.html?page=Cours">Cours</a>
+           <a class="ancher" href="http://localhost:7700/root/index.html?page=Media">Media</a>
+           <a class="ancher" href="http://localhost:7700/root/index.html?page=Staff">Staff</a>
         </div> 
 
         </nav>
@@ -41,7 +48,6 @@ class EnteteDePage extends HTMLElement {
     
     
   }
-  
 
 }
 
