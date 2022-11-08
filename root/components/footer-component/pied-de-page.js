@@ -7,6 +7,7 @@ class PiedDePage extends HTMLElement {
   }
   
 connectedCallback(){
+  this.setAttribute('class', 'pied-de-page');
   const piedPage=document.createElement('div');
   const template=document.createElement('template');
   const linkPied=document.createElement('link');

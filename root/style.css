@@ -9,11 +9,11 @@ html{
 
 
 body div#app{
-  
+  min-width: 100vw;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 80vh;
-  margin: 0px;
+
 
 
 }
@@ -38,21 +38,26 @@ body div#app{
 
 
 :root{
-  --couleur-de-police-rouge: darkred;
+  --couleur-de-police-rouge: blue;
 }
 
+.parag{
+  color:var(--couleur-de-police-rouge);
+}
 
 :defined{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 
 
 
 main#corps-de-page {
-  flex-shrink: 0;
+  
+
   /*font-size: 1em;*/
   display: grid;
+  min-width: 100vw;
   grid-template-columns: 2fr 0.6fr;
   /*font-size: 0.6rem;*/
  /* background-color: lightblue;*/
@@ -66,10 +71,11 @@ main#corps-de-page {
 
 
 .aside {
+  font-size: 1em;
   margin-top: 2px;
   margin-bottom: 2px;
   background-color: rgba(119, 136, 153, 0.50);
-  
+  padding: 10px;
 
 }
 
@@ -77,8 +83,15 @@ main#corps-de-page {
   display: none;
 }
 
+.section-page-accueil{
+  font-size: 1em;
+  min-width: 50px;
+  padding: 5px;
+}
+
 
 .aside-liste-cours{
+  min-width: 25vw;
   margin-top: 2px;
   margin-bottom: 2px;
   background-color: rgba(119, 136, 153, 0.50);
@@ -87,11 +100,21 @@ main#corps-de-page {
 .cacher-liste-cours{
   display:none;
 }
+/*
+page-accueil::part(accueil-div){
 
 
-#corps-de-page section div{
-  margin: 8px;
+}
+*/
+page-accueil::part(parag-accueil){
+  color: lightseagreen;
 }
 
-
- 
+.couleur-titre{
+  padding: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right:2px solid black;
+  border-left:2px solid black;
+  width: 300px;
+}

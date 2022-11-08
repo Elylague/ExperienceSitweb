@@ -1,6 +1,9 @@
-:host{
+:host(.pied-de-page){
   display: block;
   background-color: grey;
   padding: 5px;
+  min-width: 90vw;
   height: 100px;
+  
+  
 }

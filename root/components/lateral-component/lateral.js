@@ -14,10 +14,10 @@ class AsideLateral extends HTMLElement{
     // créer le template
     const template=document.createElement('template');
     template.innerHTML=`
+    <div class="aside-laterale">
     <h3>Les nouveaux cours vont être ajoutés ici</h3> 
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ea magnam alias nostrum voluptatem, consequatur est laudantium!Voluptatibus vitae unde rerum reiciendis, accusantium nihil saepe tempora, cum accusamus provident ut minus.</p> 
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ea magnam alias nostrum voluptatem, consequatur est laudantium!Voluptatibus vitae unde rerum reiciendis, accusantium nihil saepe tempora, cum accusamus provident ut minus.</p>
-    
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ea magnam alias nostrum voluptatem.</p> 
+    </div>
     `
       
       const templateContent=template.content.cloneNode(true);

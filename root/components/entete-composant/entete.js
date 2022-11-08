@@ -12,7 +12,7 @@ class EnteteDePage extends HTMLElement {
   }
   
   fonctDeEnteteDePage(){
-    
+    this.setAttribute('class', 'entete');
     
     const template = document.createElement('template');
     const style=document.createElement('style');

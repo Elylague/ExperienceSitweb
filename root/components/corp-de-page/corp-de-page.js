@@ -37,4 +37,4 @@ class CorpsDePage extends HTMLElement{
 }
 
 
-export {CorpsDePage};
+//export {CorpsDePage};

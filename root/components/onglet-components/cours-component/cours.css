@@ -1,7 +1,60 @@
 
 div.conteneur-cours{
-  background-color: darksalmon;
+  background-color: floralwhite;
   min-height: 70vh;
   padding: 8px;
+  min-width: 100%;
+
+}
+div ol{
+  margin-left:5px;
+  padding: 5px;
+  width: 90%;
+  margin-right: 5px;
 }
 
+.liste-des-cours li{
+ list-style-position: inside;
+  margin:8px 0;
+  margin-right: 0;
+  min-width: 60%;
+  padding: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right:2px solid black;
+  border-left:2px solid black;
+
+}
+li a{
+  padding: 8px;
+  display: inline-block;
+  width: 70%;
+  text-decoration:none;
+  padding: 5px;
+  margin: 0;
+
+}
+ol.liste-des-cours li.pink{
+  background-color: pink;
+}
+ol.liste-des-cours li.lightseagreen{
+  background-color: lightseagreen;
+}
+ol.liste-des-cours li.skyblue{
+  background-color: skyblue;
+}
+ol.liste-des-cours li.orange{
+  background-color: orange;
+}
+ol.liste-des-cours li.greenyellow{
+  background-color: greenyellow;
+}
+ol.liste-des-cours li.cadetblue {
+  background-color: cadetblue;
+}
+ol.liste-des-cours li.steelblue {
+  background-color: steelblue;
+}
+ol.liste-des-cours li.lightcoral {
+  background-color: lightcoral
+  }

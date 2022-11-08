@@ -1,6 +1,7 @@
-:host{
+:host(.entete){
   display: block;
   padding: 0;
+  min-width: 100vw;
 
 }
 /*========ENTÊTE DE LA PAGE=========*/

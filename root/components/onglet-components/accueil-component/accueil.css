@@ -1,22 +1,28 @@
-:not(:defined){
+/*:not(:defined){
   display: none;
 }
 :defined{
   display: block;
 }
-
+*/
 
 /*:host{
   padding: 10px;
 }
 */
-
+/*
 :host(.page-accueil){
-  background-color: palevioletred;
   display: block;
-  padding: 10px;
+  font-size: 0.6em;
+  background-color: mediumseagreen;
+
+  
 }
 
-.parag{
-  color: var(--couleur-de-police-rouge);
+*/
+
+
+div{
+  font-size: 1em;
+  padding: 10px;
 }

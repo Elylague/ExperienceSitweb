@@ -1,7 +1,7 @@
 
-import {routes} from './route.js'
+import {createAndReturnTitreCours,WhenPageRefresh,whenGetBackFromOnglet,routes} from './components/onglet-components/cours-component/route.js'
 import {EnteteDePage } from './components/entete-composant/entete.js'
-import {CorpsDePage } from './components/corp-de-page/corp-de-page.js'
+//import {CorpsDePage } from './components/corp-de-page/corp-de-page.js'
 import {PiedDePage} from './components/footer-component/pied-de-page.js'
 import {PageAccueil} from './components/onglet-components/accueil-component/accueil.js'
 import {AsideLateral} from './components/lateral-component/lateral.js'
@@ -10,7 +10,7 @@ import {PageMedia} from './components/onglet-components/media-component/media.js
 import {PageStaff} from './components/onglet-components/staff-component/staff.js'
 import {FormCours} from './components/formulaire-cours/form-cours.js';
 customElements.define('entete-de-page', EnteteDePage);
-customElements.define('corp-de-page', CorpsDePage);
+//customElements.define('corp-de-page', CorpsDePage);
 customElements.define('pied-de-page', PiedDePage);
 customElements.define('page-accueil', PageAccueil);
 customElements.define('aside-lateral', AsideLateral)
@@ -19,23 +19,48 @@ customElements.define('page-media', PageMedia);
 customElements.define('page-staff', PageStaff);
 customElements.define('form-cours', FormCours);
 customElements.define('liste-cours', ListeCours)
-
-//const corpsDePage=document.querySelector('#corps-de-page');
-
-//import {routes} from './route.js'
-
-
 const divApp=document.querySelector('#app');
+
+function headMainFoot(){
+  const entetePage=document.createElement('entete-de-page');
+  const mainPrincipal=document.createElement('main');
+  const asideListeDesCours=document.createElement('aside');
+  const barreLateral=document.createElement('aside');
+  const sectionDePageAccueil=document.createElement('section');
+  const piedDepage=document.createElement('pied-de-page');
+  // create children costumElements
+  const pageDeAccueil=document.createElement('page-accueil');
+  const customLateral=document.createElement('aside-lateral');
+  asideListeDesCours.className='cacher-aside';
+  // add class and id in elements
+mainPrincipal.id='corps-de-page';
+mainPrincipal.classList.add('corps-de-page');
+sectionDePageAccueil.classList.add('section-page-accueil');
+barreLateral.classList.add('aside');
+// appendChild in corresponding elements
+//const textNodeAside=document.createTextNode('je suis le aside qui est presque vide')
+sectionDePageAccueil.appendChild(pageDeAccueil);
+barreLateral.appendChild(customLateral);
+//barreLateral.appendChild(textNodeAside);
+mainPrincipal.append(asideListeDesCours,sectionDePageAccueil, barreLateral);
+divApp.append(entetePage, mainPrincipal, piedDepage);
+}
+headMainFoot();
+
+
+
 let sectionPageCours=document.querySelector('main .section-page-accueil')
 
- //console.log(ancrePageCours);
 
+/* CETTE FONCTION ME RETOURNE TOUS LAS PARAMETRES
+DE L'URL POUR TOUTES LES PAGES. ELLE EST APPELÉE PAR:
+activerOngletCliquer()-pushStateNewUrl()
+templatePageName()-callActiverOngletCliquer()*/
 
-
-    const locationPathName = () => {
+    const getUrlParameters = () => {
       // console.log(history.state)
       //console.log(history.state.nomPage);
-      
+    
       const exUrl = window.location.href
       //console.log(Url);
       const exNewUrl = new URL(exUrl)
@@ -50,30 +75,12 @@ let sectionPageCours=document.querySelector('main .section-page-accueil')
       
       }
       
+    }
+    
+    
 
-    
-    }
-    
-    function compareStateAndParams(){
-      
-      const exUrl = window.location.href
-      //console.log(Url);
-      const exNewUrl = new URL(exUrl)
-      const params= exNewUrl.searchParams.has('cours');
-      if (params){
-      let lesCours='';
-        return lesCours=exNewUrl.searchParams.get('cours');
-        
-      }else{
-        let lesPages='';
-        return lesPages=exNewUrl.searchParams.get('page');
-        
-      }
-      
-    }
-    
-  
-  // RECUPPERER  LES ONGLETS ET LES AJOUTER UN CLICK
+  /* CETTE FONCTION NE FAIT QUE RETOURNER  LES ANCRES DANS L'ÉLÉMENT PERSONALISÉ entete-de-page
+  ELLE EST APPELÉE PAR LA FONCTION ajouterClickSurAncreOnglet()*/
   // première action de départ=======(2)
 const recupererAncher=()=> {
   let ancreOnglet=document.querySelector('#app entete-de-page');
@@ -82,13 +89,16 @@ const recupererAncher=()=> {
   return ancreOnglet;
 }
 
-
+/*CETTE FONCTION NE FAIT QU'AJOUTER DES CLICKS
+SUR LES ONGLETS DU MENU PRINCIPALE DE LA PAGE.
+ELLE EST APPELÉE GLOBALEMENT PAR LE NAVIGATEUR.
+ELLE APPELLE LA FONCTION recupererAncher()*/
 //dexième action de départ======(1)
 const ajouterClickSurAncreOnglet=()=> {
   let ancreOngletRetouner=recupererAncher();
   
   ancreOngletRetouner.forEach((ancreRetourner, index)=> {
-    ancreRetourner.addEventListener('click', ancreContentAndNewUrl)
+    ancreRetourner.addEventListener('click', getAttributeHrefInAncher)
     
   })
   
@@ -96,11 +106,12 @@ const ajouterClickSurAncreOnglet=()=> {
 ajouterClickSurAncreOnglet()
 
 
-
+/* CETTE FONCTION NE FAIT QUE METTRE UN FOCUS 
+SUR L'ONGLET CLIQUER POUR INDIQUER QU'ELLE EST CLIQUÉE */
 //la troisième action de départ====
 function activerOngletCliquer(){
   let ancreOngletRetouner=recupererAncher()
-  let valueParams=compareStateAndParams();
+  let valueParams=getUrlParameters()//compareStateAndParams();
   //console.log(params, 'dans activerOngletCliquer');
   ancreOngletRetouner.forEach(onglet=> {
     onglet.className=''
@@ -150,39 +161,43 @@ function activerOngletCliquer(){
   
 }
 
-
+/* LA FONCTION À APPELER QUI EST LE GESTIONAIRE D'ÉVÈNENMENT
+QUAND ON CLIQUE SUR LE MENU DA LA PAGE. CE GESTIONNAIRE D'ÉVÈNEMENT
+APPELLE LA FONCTION activerOngletCliquer()
+ ET LA FONCTION pushStateNewUrl()*/
 //troisième action de départ======(3)
-function ancreContentAndNewUrl(e) {
+function getAttributeHrefInAncher(e) {
   e.preventDefault();
-  
-
-  let targetCliquer=e.currentTarget
   let ancreHref=e.target.href
-  let texte=e.target.textContent
- 
-
 
  activerOngletCliquer()
   pushStateNewUrl(ancreHref)
   
-  
-
- // return targetCliquer
 }
 
+/* CETTE FONCTION NE FAIT QUE METTRE À JOUR
+L'URL POUR LA PAGE CORRESPONDANTE 
+ELLE EST APPELÉE PAR LE GESTIONNAIRE D'ÉVÈNEMENT
+getAttributeHrefInAncher() ET ELLE
+APPELLE LA FONCTION templateAndUrl() */
 // quatrième action de départ=====(4)
 function pushStateNewUrl(UrlAncher){
-  let nomPage=locationPathName();
-  window.history.pushState({nomPage}, nomPage, UrlAncher );
- 
+  let nomPage=getUrlParameters();
+  //console.log(nomPage);
+  //console.log(UrlAncher);
+  window.history.pushState({nomPage}, '', UrlAncher );
+  document.title=nomPage;
+ // console.log(history.state);
  templateAndUrl()
 }
 
 //==== Fin popState(3)
-
+/* COMPARER LES VALEURS DES PARAMETRES 
+POUR AFFCHER LA PAGE CORRESPONDANT*/
 //sixième action de départ====(6-2)
 const templatePageName=(object)=> {
- let nomPage=locationPathName()
+ // console.log('when the page had loaded');
+ let nomPage=getUrlParameters();
   //console.log(nomPage);
   if (object.nomPage===nomPage) {
    object.render()
@@ -193,7 +208,14 @@ const templatePageName=(object)=> {
   }
   
 }
+
+/* CETTE FONCTION NE FAIT QUE AFFICHER
+LA PAGE EN FONCTION DE L'URL ET ELLE 
+APPELLE LA FONCTION callActiverOnglet().
+ELLE EST APPELÉE PAR LA FONCTION loadPage()
+, LA FONCTION pushStateNewUrl() ET L'ÉVÈNEMENT popstate*/
 // cinquième action de dépaet=== (5-1)
+// LoadPage I
 function  templateAndUrl() {
   
   routes.find(templatePageName)
@@ -202,7 +224,7 @@ callActiverOngletCliquer()
 
 
 function callActiverOngletCliquer(){
-  let texteActiver = locationPathName()
+  let texteActiver = getUrlParameters();
   
   if (texteActiver) {
     activerOngletCliquer(texteActiver)
@@ -217,10 +239,14 @@ function callActiverOngletCliquer(){
 
 window.addEventListener('popstate', templateAndUrl)
 
-
+// loadPage I
 function loadPage(){
   templateAndUrl()
+ 
 }
+
+// QUAND LA PAGE EST index.html CHARGÉ POUR LA PREMIÈRE FOIS
+// QUAND LA PAGE EST RAFRAICHIT
 
 window.addEventListener('load', loadPage)
 

@@ -1,6 +1,12 @@
-:host(.lateral){
- /* background-color: yellow;*/
+/*:host(.lateral){
+  background-color: yellow;
   display: block;
   padding: 10px;
- /* width: 300px;*/
+}
+*/
+div.aside-laterale{
+
+  min-height: 70vh;
+  min-width: 20vw;
+  margin: 0;
 }
