@@ -1,4 +1,14 @@
 import {routes} from './route.js'
+/*import {getCoursJson} from './dataCoursMath.js'
+getCoursJson.getMathJson('./components/onglet-components/cours-component/mathematiques.json')
+console.log(getCoursJson);
+*/
+/*
+getMathJason('mathematiques.json')
+let mathTerm = window.sessionStorage.getItem('mathTe');
+console.log(JSON.parse(mathTerm), 'mathTerm');
+*/
+
 
 //console.log(routes);
 class ListeCours extends HTMLElement{
@@ -11,6 +21,9 @@ class ListeCours extends HTMLElement{
   connectedCallback(){
       this.customElementsFonctionality()
       this.ajouterClickSurListCours();
+      this.getNameCoursPourForm()
+    
+      //this.getCoursPourForm()
     //console.log(routes)
   }
   
@@ -27,7 +40,7 @@ class ListeCours extends HTMLElement{
           <div class="conteneur-cours">
           <h3>La liste de tous les cours</h3> 
                 <ol type='I' class="liste-des-cours">
-                   <li class="pink"><a href='http://localhost:7700/root/index.html?page=Cours&cours=mathematiques'>Mathematiques</a></li>
+                   <li class="pink"><a href='http://localhost:7700/root/index.html?page=Cours&cours=mathematiques'>Mathématiques</a></li>
                    <li class="lightseagreen"><a href='http://localhost:7700/root/index.html?page=Cours&cours=Physiques'>Physiques</a></li>
                    <li class="skyblue"><a href='http://localhost:7700/root/index.html?page=Cours&cours=Chimie'>Chimie</a></li>
                    <li class="orange"><a href='http://localhost:7700/root/index.html?page=Cours&cours=science sociale'>Science sociale</a></li>
@@ -45,6 +58,10 @@ class ListeCours extends HTMLElement{
     this.shadowRoot.appendChild(templateContent)
     
   }
+  
+  
+  
+  
   
   
   
@@ -68,13 +85,15 @@ class ListeCours extends HTMLElement{
     event.preventDefault();
     const colorName=event.target.parentElement.getAttribute('class');
     const urlAncreCours=event.target.href;
+    const nameCours=event.target.textContent
     //console.log(colorName);
-    this.getColors(colorName);
+    //this.getColors(colorName);
     this.pushStateUrlCoursList(urlAncreCours);
-  
+    this.getNameCoursPourForm(nameCours)
   }
   
   pushStateUrlCoursList(url) {
+    
     const newUrlFormCours=new URL(url);
    const UrlFormCours=newUrlFormCours.href
     const paramsFormCours=newUrlFormCours.searchParams
@@ -115,6 +134,31 @@ class ListeCours extends HTMLElement{
    // console.log('COULEUR: ',getCouleurs);
   }
   
+  
+  
+  getNameCoursPourForm(nameCours='null'){
+    let nomDuCours=''
+    sessionStorage.setItem('mathematiques', nameCours);
+    if (sessionStorage.getItem('mathematiques')!=='null') {
+      nomDuCours=sessionStorage.getItem('mathematiques');
+      console.log(nomDuCours, 'nomDuCours pour formulaire');
+      
+    } else {
+      let urlPourForm=window.location.href
+      //console.log(urlPourForm);
+     const newUrlFormCours = new URL(urlPourForm);
+    // const UrlFormCours = newUrlFormCours.href
+     const paramsFormCours = newUrlFormCours.searchParams
+     let nomPage = paramsFormCours.get('cours');
+     sessionStorage.setItem('mathematiques', nomPage);
+     nomPage=sessionStorage.getItem('mathematiques');
+     
+     console.log(nomPage);
+      
+    }
+    
+    
+  }
   
 
   

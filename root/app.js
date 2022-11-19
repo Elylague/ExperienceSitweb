@@ -1,4 +1,6 @@
 
+
+
 import {createAndReturnTitreCours,WhenPageRefresh,whenGetBackFromOnglet,routes} from './components/onglet-components/cours-component/route.js'
 import {EnteteDePage } from './components/entete-composant/entete.js'
 //import {CorpsDePage } from './components/corp-de-page/corp-de-page.js'
@@ -20,6 +22,10 @@ customElements.define('page-staff', PageStaff);
 customElements.define('form-cours', FormCours);
 customElements.define('liste-cours', ListeCours)
 const divApp=document.querySelector('#app');
+
+
+
+console.log('après tous les autres')
 
 function headMainFoot(){
   const entetePage=document.createElement('entete-de-page');
@@ -249,7 +255,6 @@ function loadPage(){
 // QUAND LA PAGE EST RAFRAICHIT
 
 window.addEventListener('load', loadPage)
-
 
 
 //console.log(divApp);

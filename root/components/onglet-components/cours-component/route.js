@@ -1,3 +1,8 @@
+import {getCoursJson} from './dataCoursMath.js'
+getCoursJson.getMathJson('./components/onglet-components/cours-component/mathematiques.json');
+
+
+
  const createAndReturnTitreCours=(nomCours, newAsideLate)=> {
    const h1 = document.createElement('h1');
    const center=document.createElement('center')
@@ -98,6 +103,8 @@
    //créer le titre
    const centrerTitreCours=createAndReturnTitreCours(nomCours,newAsideLate);
    const formCours = document.createElement('form-cours');
+  // const inputForm=formCours.shadowRoot.querySelector('.input-niveau-math');
+  // console.log(inputForm);
    sectionCorpDeMaPage.innerHTML = ''
    sectionCorpDeMaPage.append(centrerTitreCours, formCours);
    theOldAside.classList.add('cacher-aside');
@@ -300,6 +307,9 @@ let routes=[
    
   
   render(){
+    let mathTerm = window.sessionStorage.getItem('mathTe');
+    
+    console.log(JSON.parse(mathTerm), 'je suis mathematiques objet methode');
     
     let sectionCorpDeMaPage = document.querySelector('main .section-page-accueil');
     let theNewAsideCour = sectionCorpDeMaPage.previousElementSibling;

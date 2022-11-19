@@ -5,8 +5,11 @@ class FormCours extends HTMLElement{
   }
   
   connectedCallback(){
-    //this.takeValueCoursInParams()
+    //this.takeValueCoursInParams();
+    
     this.fonctionLireCours()
+    //this.getDataMathCours()
+    this.getDataAndForEachThem()
   }
   
   
@@ -27,11 +30,11 @@ class FormCours extends HTMLElement{
               <legend><strong>Choisir une branche et votre Niveau Mathématique</strong></legend>
                  
                   <label>votre Niveau<label />
-                   <input class="inputNiveau" type="text" placeholder="choisir votre Niveau" />
+                   <input list="input-niveau-math" class="input-niveau-math" type="text" placeholder="choisir votre Niveau" />
                   <br/><br/>
                 
                     <label>Matière:</label>
-                    <input class="matiere" type="text" placeholder="Select" />
+                    <input list="input-matiere" class="input-matiere" type="text" placeholder="Select" />
                   
         
                 </fieldset>
@@ -43,6 +46,51 @@ class FormCours extends HTMLElement{
     const templateContent = template.content.cloneNode(true);
     this.shadowRoot.appendChild(templateContent)
   }
+  
+  
+  getDataMathCours(){
+    let mathTerm = window.sessionStorage.getItem('mathTe');
+    mathTerm=JSON.parse(mathTerm);
+    //console.log(JSON.parse(mathTerm), 'je suis dans le formulaire');
+    return mathTerm;
+  }
+  
+  
+  
+  
+  
+  getDataAndForEachThem=()=> {
+    const tabMath=[];
+    const data=this.getDataMathCours()
+  data.find(function(mathCours){
+    
+    if (mathCours['mathématique Terminale']){
+      //console.log(mathCours)
+      for(let objMath in mathCours){
+        tabMath.push(objMath);
+       // console.log(tabMath);
+       let branche= mathCours[objMath]
+     // console.log(mathCours[objMath])
+     // forEachOnBranchMath(branche)
+       
+      }
+      
+    
+    }
+    
+    let brancheMath=mathCours[tabMath[2]]
+    //forEachOnBranchMath(brancheMath)
+   // console.log(data[6].niveau);
+  
+  })
+  //console.log(tabMath)
+//  createDatalist()
+ //return {tabMath};
+}
+
+
+  
+  // end of class
 }
 
 export  {FormCours};
